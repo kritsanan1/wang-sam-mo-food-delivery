@@ -1,0 +1,40 @@
+# Dependencies
+node_modules/
+.expo/
+dist/
+web-build/
+
+# Firebase
+.firebase/
+firebase-debug.log
+firestore-debug.log
+ui-debug.log
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build
+*.tsbuildinfo
+lib/
+out/
+build/
+
+# Expo
+.expo-shared/
+
+# Credentials
+google-services.json
+GoogleService-Info.plist
+serviceAccountKey.json
