@@ -1,0 +1,29 @@
+{
+  "expo": {
+    "name": "วังสามหมอ ร้านอาหาร",
+    "slug": "wang-sam-mo-restaurant",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "wangsammo-restaurant",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "ios": {
+      "bundleIdentifier": "com.wangsammo.restaurant",
+      "supportsTablet": true
+    },
+    "android": {
+      "package": "com.wangsammo.restaurant"
+    },
+    "plugins": ["expo-router", "expo-notifications", "expo-image-picker"],
+    "extra": {
+      "firebaseConfig": {
+        "apiKey": "YOUR_API_KEY",
+        "authDomain": "YOUR_PROJECT.firebaseapp.com",
+        "projectId": "YOUR_PROJECT_ID",
+        "storageBucket": "YOUR_PROJECT.appspot.com",
+        "messagingSenderId": "YOUR_SENDER_ID",
+        "appId": "YOUR_APP_ID"
+      }
+    }
+  }
+}
