@@ -27,9 +27,11 @@ Thumbs.db
 
 # Build
 *.tsbuildinfo
-lib/
 out/
 build/
+
+# Next.js
+.next/
 
 # Expo
 .expo-shared/
