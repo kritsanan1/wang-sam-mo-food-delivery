@@ -7,6 +7,12 @@
     "scheme": "wangsammorider",
     "userInterfaceStyle": "light",
     "newArchEnabled": false,
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#2EC4B6"
+    },
     "ios": {
       "bundleIdentifier": "com.wangsammo.rider",
       "supportsTablet": true,

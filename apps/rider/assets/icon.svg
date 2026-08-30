@@ -1,0 +1,17 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1024" height="1024" rx="224" fill="#2EC4B6"/>
+  <!-- Motorbike silhouette -->
+  <path d="M300 600 Q300 550 350 550 L400 550 Q450 550 450 600 L450 620 Q450 640 430 640 L320 640 Q300 640 300 620 Z" fill="#FFFFFF"/>
+  <!-- Wheels -->
+  <circle cx="340" cy="680" r="50" fill="none" stroke="#FFFFFF" stroke-width="20"/>
+  <circle cx="680" cy="680" r="50" fill="none" stroke="#FFFFFF" stroke-width="20"/>
+  <!-- Delivery bag on back -->
+  <rect x="500" y="480" width="120" height="100" rx="12" fill="#FF6B35"/>
+  <path d="M520 480 Q520 450 560 450 Q600 450 600 480" stroke="#FF6B35" stroke-width="12" fill="none"/>
+  <!-- Body connecting -->
+  <path d="M400 600 L500 580 L500 640 L400 640" fill="#FFFFFF" opacity="0.8"/>
+  <!-- Handlebar -->
+  <path d="M450 550 L470 500" stroke="#FFFFFF" stroke-width="12" stroke-linecap="round"/>
+  <!-- Text -->
+  <text x="512" y="820" font-family="Sarabun, Arial, sans-serif" font-size="64" font-weight="bold" fill="#FFFFFF" text-anchor="middle">Rider</text>
+</svg>

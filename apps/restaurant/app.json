@@ -7,6 +7,12 @@
     "scheme": "wangsammorestaurant",
     "userInterfaceStyle": "light",
     "newArchEnabled": false,
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#FF6B35"
+    },
     "ios": {
       "bundleIdentifier": "com.wangsammo.restaurant",
       "supportsTablet": true

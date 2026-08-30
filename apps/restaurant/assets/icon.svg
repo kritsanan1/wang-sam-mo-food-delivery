@@ -1,0 +1,14 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1024" height="1024" rx="224" fill="#FF6B35"/>
+  <!-- Chef hat -->
+  <path d="M380 300 Q380 240 440 240 Q460 200 512 200 Q564 200 584 240 Q644 240 644 300 L644 380 L380 380 Z" fill="#FFFFFF"/>
+  <rect x="380" y="380" width="264" height="40" rx="8" fill="#FFFFFF" opacity="0.8"/>
+  <!-- Bowl -->
+  <ellipse cx="512" cy="560" rx="140" ry="30" fill="#2EC4B6"/>
+  <path d="M372 560 Q372 640 512 640 Q652 640 652 560" fill="#2EC4B6"/>
+  <!-- Steam from bowl -->
+  <path d="M480 530 Q470 510 480 490 Q490 470 480 450" stroke="#FFFFFF" stroke-width="12" fill="none" opacity="0.5" stroke-linecap="round"/>
+  <path d="M544 530 Q534 510 544 490 Q554 470 544 450" stroke="#FFFFFF" stroke-width="12" fill="none" opacity="0.5" stroke-linecap="round"/>
+  <!-- Text -->
+  <text x="512" y="820" font-family="Sarabun, Arial, sans-serif" font-size="56" font-weight="bold" fill="#FFFFFF" text-anchor="middle">ร้านอาหาร</text>
+</svg>

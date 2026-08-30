@@ -1,0 +1,16 @@
+<svg width="1242" height="2436" viewBox="0 0 1242 2436" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1242" height="2436" fill="#FF6B35"/>
+  <!-- Delivery bag -->
+  <path d="M420 1100 H822 V1450 Q822 1490 782 1490 H460 Q420 1490 420 1450 Z" fill="#FFFFFF"/>
+  <path d="M490 1100 Q490 980 621 980 Q752 980 752 1100" stroke="#FFFFFF" stroke-width="30" fill="none"/>
+  <!-- Steam -->
+  <path d="M560 950 Q540 920 560 890 Q580 860 560 830" stroke="#FFFFFF" stroke-width="20" fill="none" opacity="0.7" stroke-linecap="round"/>
+  <path d="M621 950 Q601 920 621 890 Q641 860 621 830" stroke="#FFFFFF" stroke-width="20" fill="none" opacity="0.7" stroke-linecap="round"/>
+  <path d="M682 950 Q662 920 682 890 Q702 860 682 830" stroke="#FFFFFF" stroke-width="20" fill="none" opacity="0.7" stroke-linecap="round"/>
+  <!-- Bowl -->
+  <ellipse cx="621" cy="1300" rx="150" ry="36" fill="#2EC4B6"/>
+  <path d="M471 1300 Q471 1370 621 1370 Q771 1370 771 1300" fill="#2EC4B6"/>
+  <!-- Text -->
+  <text x="621" y="1650" font-family="Sarabun, Arial, sans-serif" font-size="72" font-weight="bold" fill="#FFFFFF" text-anchor="middle">วังสามหมอ</text>
+  <text x="621" y="1720" font-family="Sarabun, Arial, sans-serif" font-size="40" fill="#FFFFFF" text-anchor="middle" opacity="0.9">Food Delivery</text>
+</svg>

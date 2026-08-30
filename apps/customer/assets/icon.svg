@@ -1,0 +1,19 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1024" height="1024" rx="224" fill="#FF6B35"/>
+  <!-- Delivery bag -->
+  <path d="M320 380 H704 V680 Q704 720 664 720 H360 Q320 720 320 680 Z" fill="#FFFFFF"/>
+  <!-- Bag handle -->
+  <path d="M380 380 Q380 280 512 280 Q644 280 644 380" stroke="#FFFFFF" stroke-width="24" fill="none"/>
+  <!-- Steam -->
+  <path d="M460 260 Q440 240 460 220 Q480 200 460 180" stroke="#FFFFFF" stroke-width="16" fill="none" opacity="0.7" stroke-linecap="round"/>
+  <path d="M512 260 Q492 240 512 220 Q532 200 512 180" stroke="#FFFFFF" stroke-width="16" fill="none" opacity="0.7" stroke-linecap="round"/>
+  <path d="M564 260 Q544 240 564 220 Q584 200 564 180" stroke="#FFFFFF" stroke-width="16" fill="none" opacity="0.7" stroke-linecap="round"/>
+  <!-- Bowl inside bag -->
+  <ellipse cx="512" cy="540" rx="120" ry="30" fill="#2EC4B6"/>
+  <path d="M392 540 Q392 600 512 600 Q632 600 632 540" fill="#2EC4B6"/>
+  <!-- Location pin -->
+  <circle cx="512" cy="450" r="20" fill="#FF6B35"/>
+  <!-- Text -->
+  <text x="512" y="820" font-family="Sarabun, Arial, sans-serif" font-size="64" font-weight="bold" fill="#FFFFFF" text-anchor="middle">วังสามหมอ</text>
+  <text x="512" y="880" font-family="Sarabun, Arial, sans-serif" font-size="36" fill="#FFFFFF" text-anchor="middle" opacity="0.9">Food Delivery</text>
+</svg>
