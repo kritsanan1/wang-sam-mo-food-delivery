@@ -1,0 +1,35 @@
+<svg width="800" height="1200" viewBox="0 0 800 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="1200" fill="#F8F9FA"/>
+  
+  <!-- Header -->
+  <rect width="800" height="160" fill="#FF6B35"/>
+  <text x="400" y="70" font-family="Sarabun, Arial, sans-serif" font-size="36" font-weight="bold" fill="#FFFFFF" text-anchor="middle">วังสามหมอ Food Delivery</text>
+  <text x="400" y="110" font-family="Sarabun, Arial, sans-serif" font-size="20" fill="#FFFFFF" text-anchor="middle" opacity="0.9">สแกน QR Code เพื่อดาวน์โหลดแอพ</text>
+  
+  <!-- Customer QR -->
+  <rect x="100" y="200" width="600" height="220" rx="16" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="1"/>
+  <text x="400" y="240" font-family="Sarabun, Arial" font-size="22" font-weight="bold" fill="#FF6B35" text-anchor="middle">📱 Customer App</text>
+  <text x="400" y="268" font-family="Sarabun, Arial" font-size="14" fill="#6C757D" text-anchor="middle">สั่งอาหารจากร้านใกล้คุณ</text>
+  <image href="design/qr-codes/qr-customer.png" x="300" y="288" width="200" height="200"/>
+  
+  <!-- Rider QR -->
+  <rect x="100" y="450" width="600" height="220" rx="16" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="1"/>
+  <text x="400" y="490" font-family="Sarabun, Arial" font-size="22" font-weight="bold" fill="#2EC4B6" text-anchor="middle">🛵 Rider App</text>
+  <text x="400" y="518" font-family="Sarabun, Arial" font-size="14" fill="#6C757D" text-anchor="middle">รับงานส่งอาหาร สร้างรายได้</text>
+  <image href="design/qr-codes/qr-rider.png" x="300" y="538" width="200" height="200"/>
+  
+  <!-- Restaurant QR -->
+  <rect x="100" y="700" width="600" height="220" rx="16" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="1"/>
+  <text x="400" y="740" font-family="Sarabun, Arial" font-size="22" font-weight="bold" fill="#FF6B35" text-anchor="middle">🏪 Restaurant App</text>
+  <text x="400" y="768" font-family="Sarabun, Arial" font-size="14" fill="#6C757D" text-anchor="middle">จัดการคำสั่งและเมนูร้าน</text>
+  <image href="design/qr-codes/qr-restaurant.png" x="300" y="788" width="200" height="200"/>
+  
+  <!-- Admin QR -->
+  <rect x="100" y="950" width="600" height="180" rx="16" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="1"/>
+  <text x="400" y="990" font-family="Sarabun, Arial" font-size="22" font-weight="bold" fill="#1A1A2E" text-anchor="middle">📊 Admin Dashboard</text>
+  <text x="400" y="1018" font-family="Sarabun, Arial" font-size="14" fill="#6C757D" text-anchor="middle">จัดการแพลตฟอร์ม</text>
+  <image href="design/qr-codes/qr-admin.png" x="350" y="1038" width="100" height="100"/>
+  
+  <!-- Footer -->
+  <text x="400" y="1170" font-family="Sarabun, Arial" font-size="14" fill="#ADB5BD" text-anchor="middle">วังสามหมอ อุดรธานี · สแกนด้วยกล้องมือถือ</text>
+</svg>
