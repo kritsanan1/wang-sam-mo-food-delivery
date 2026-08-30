@@ -7,13 +7,14 @@
  * ต้องตั้งค่า GOOGLE_APPLICATION_CREDENTIALS หรือใช้ firebase admin sdk
  */
 
-import admin from "firebase-admin";
+import { initializeApp, applicationDefault, cert } from "firebase-admin/app";
+import { getFirestore, FieldValue, Timestamp } from "firebase-admin/firestore";
 
-admin.initializeApp({
+const app = initializeApp({
   projectId: "wang-sam-mo-food-delivery",
 });
 
-const db = admin.firestore();
+const db = getFirestore(app);
 const batch = db.batch();
 
 // ============================================================
@@ -213,7 +214,7 @@ const promotions = [
     minOrder: 100,
     maxUses: 1000,
     usedCount: 0,
-    expiresAt: admin.firestore.Timestamp.fromDate(new Date("2026-12-31")),
+    expiresAt: Timestamp.fromDate(new Date("2026-12-31")),
     isActive: true,
   },
   {
@@ -223,7 +224,7 @@ const promotions = [
     minOrder: 80,
     maxUses: 500,
     usedCount: 0,
-    expiresAt: admin.firestore.Timestamp.fromDate(new Date("2026-12-31")),
+    expiresAt: Timestamp.fromDate(new Date("2026-12-31")),
     isActive: true,
   },
 ];
@@ -239,7 +240,7 @@ async function seed() {
   for (const rest of restaurants) {
     batch.set(db.collection("restaurants").doc(rest.id), {
       ...rest,
-      createdAt: admin.firestore.FieldValue.serverTimestamp(),
+      createdAt: FieldValue.serverTimestamp(),
     });
   }
   console.log(`  ✓ ${restaurants.length} restaurants`);
@@ -259,7 +260,7 @@ async function seed() {
   for (const rider of riders) {
     batch.set(db.collection("riders").doc(rider.id), {
       ...rider,
-      createdAt: admin.firestore.FieldValue.serverTimestamp(),
+      createdAt: FieldValue.serverTimestamp(),
     });
   }
   console.log(`  ✓ ${riders.length} riders`);
