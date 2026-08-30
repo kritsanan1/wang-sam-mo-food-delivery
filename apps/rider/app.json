@@ -4,33 +4,33 @@
     "slug": "wang-sam-mo-rider",
     "version": "1.0.0",
     "orientation": "portrait",
-    "scheme": "wangsammo-rider",
+    "scheme": "wangsammorider",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
     "ios": {
       "bundleIdentifier": "com.wangsammo.rider",
       "supportsTablet": true,
       "infoPlist": {
-        "NSLocationWhenInUseUsageDescription": "ต้องการที่ตั้งเพื่อส่งงานใกล้คุณ",
-        "NSLocationAlwaysUsageDescription": "ต้องการที่ตั้งตลอดเวลาเพื่อติดตามการส่ง"
-      },
-      "config": { "googleMapsApiKey": "YOUR_IOS_MAPS_KEY" }
+        "NSLocationWhenInUseUsageDescription": "ต้องการที่ตั้งเพื่อรับงานส่ง",
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "ต้องการที่ตั้งเพื่อส่งอาหาร"
+      }
     },
     "android": {
       "package": "com.wangsammo.rider",
-      "permissions": ["ACCESS_FINE_LOCATION", "ACCESS_COARSE_LOCATION", "ACCESS_BACKGROUND_LOCATION"],
-      "config": { "googleMaps": { "apiKey": "YOUR_ANDROID_MAPS_KEY" } }
+      "permissions": ["ACCESS_FINE_LOCATION", "ACCESS_COARSE_LOCATION", "ACCESS_BACKGROUND_LOCATION"]
     },
+    "web": { "bundler": "metro" },
     "plugins": ["expo-router", "expo-notifications", "expo-location"],
     "extra": {
       "firebaseConfig": {
-        "apiKey": "YOUR_API_KEY",
-        "authDomain": "YOUR_PROJECT.firebaseapp.com",
-        "projectId": "YOUR_PROJECT_ID",
-        "storageBucket": "YOUR_PROJECT.appspot.com",
-        "messagingSenderId": "YOUR_SENDER_ID",
-        "appId": "YOUR_APP_ID"
+        "apiKey": "AIzaSyD4sWSZqHmHBK-47saTScpdtZ8XGHRGJ1Y",
+        "authDomain": "wang-sam-mo-food-delivery.firebaseapp.com",
+        "projectId": "wang-sam-mo-food-delivery",
+        "storageBucket": "wang-sam-mo-food-delivery.firebasestorage.app",
+        "messagingSenderId": "602447821203",
+        "appId": "1:602447821203:web:e1241cefeaf895291c5066"
       }
-    }
+    },
+    "runtimeVersion": { "policy": "appVersion" }
   }
 }
