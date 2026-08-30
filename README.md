@@ -1,57 +1,128 @@
 # วังสามหมอ Food Delivery
 
-แอพสั่งอาหารและจัดส่งสำหรับอำเภอวังสามหมอ จังหวัดอุดรธานี  
-อ้างอิง GrabFood & LINE MAN Wongnai  
-Backend: Firebase | Mobile: React Native + Expo | Admin: Next.js
+Food delivery platform for Wang Sam Mo district, Udon Thani, Thailand.
+Built with Firebase, React Native (Expo), and Next.js.
 
-## โครงสร้างโปรเจกต์
+## Architecture
 
 ```
-wang-sam-mo-food-delivery/
 ├── apps/
-│   ├── customer/      # แอพลูกค้า (React Native + Expo)
-│   ├── rider/         # แอพไรเดอร์ (React Native + Expo)
-│   └── restaurant/    # แอพร้านอาหาร (React Native + Expo)
-├── admin/             # Admin Dashboard (Next.js)
-├── functions/         # Cloud Functions (Node.js + TypeScript)
-├── design/            # Design specs + wireframes
-├── docs/              # PRD, architecture, API docs
-└── .github/           # CI/CD workflows
+│   ├── customer/     — Customer mobile app (Expo + React Native)
+│   ├── rider/        — Rider mobile app (Expo + React Native)
+│   └── restaurant/   — Restaurant mobile app (Expo + React Native)
+├── admin/            — Admin dashboard (Next.js + Tailwind)
+├── functions/        — Cloud Functions (Firebase)
+├── design/           — Design spec & wireframes
+├── docs/             — GitHub issues breakdown
+├── scripts/          — Seed data & utilities
+├── firebase.json     — Firebase config
+├── firestore.rules   — Firestore security rules
+├── storage.rules     — Storage security rules
+└── eas.json          — Expo EAS build config
 ```
 
-## เริ่มต้นใช้งาน
+## Firebase Project
 
-### ติดตั้งเครื่องมือ
-- Node.js 20+
-- npm หรือ yarn
-- Expo CLI (`npm install -g expo-cli`)
-- Firebase CLI (`npm install -g firebase-tools`)
+- **Project ID:** `wang-sam-mo-food-delivery`
+- **Location:** `asia-southeast1` (Singapore)
+- **Console:** https://console.firebase.google.com/project/wang-sam-mo-food-delivery
 
-### ตั้งค่า Firebase
-1. สร้าง Firebase project ที่ https://console.firebase.google.com
-2. เปิดใช้: Authentication, Firestore, Cloud Functions, Cloud Messaging, Storage, Hosting
-3. ดาวน์โหลด config ใส่ใน `.env` ของแต่ละแอพ
+## Setup
 
-### รันแอพ
+### 1. Install dependencies
+
 ```bash
-# Customer app
-cd apps/customer && npm install && npx expo start
+# Root
+npm run setup
 
-# Rider app
-cd apps/rider && npm install && npx expo start
-
-# Restaurant app
-cd apps/restaurant && npm install && npx expo start
-
-# Admin dashboard
-cd admin && npm install && npm run dev
-
-# Cloud Functions
-cd functions && npm install && npm run serve
+# Or individual:
+cd apps/customer && npm install
+cd apps/rider && npm install
+cd apps/restaurant && npm install
+cd admin && npm install
+cd functions && npm install
 ```
 
-## ทีม
-AI Agents Team — พัฒนาด้วย AI agent workflow
+### 2. Firebase CLI
+
+```bash
+npm install -g firebase-tools
+firebase login
+firebase use wang-sam-mo-food-delivery
+```
+
+### 3. Deploy Firestore rules & indexes
+
+```bash
+firebase deploy --only firestore:rules,firestore:indexes
+```
+
+### 4. Deploy Cloud Functions (requires Blaze plan)
+
+```bash
+firebase deploy --only functions
+```
+
+### 5. Deploy Storage (requires setup in console)
+
+```bash
+firebase deploy --only storage
+```
+
+### 6. Seed test data
+
+```bash
+cd scripts
+npx tsx seed-firestore.ts
+```
+
+## Running the apps
+
+### Customer app
+
+```bash
+cd apps/customer
+npx expo start
+```
+
+### Rider app
+
+```bash
+cd apps/rider
+npx expo start
+```
+
+### Restaurant app
+
+```bash
+cd apps/restaurant
+npx expo start
+```
+
+### Admin dashboard
+
+```bash
+cd admin
+npm run dev    # development
+npm run build  # production build
+```
+
+## GitHub
+
+- **Repo:** https://github.com/kritsanan1/wang-sam-mo-food-delivery
+- **Issues:** 40 issues across 8 epics
+
+## Tech Stack
+
+| Component | Technology |
+|---|---|
+| Mobile apps | Expo SDK 52, React Native, TypeScript |
+| State | Zustand, TanStack React Query |
+| Backend | Firebase (Firestore, Auth, Functions, FCM, Storage) |
+| Admin | Next.js 14, Tailwind CSS, Lucide Icons |
+| CI/CD | GitHub Actions |
+| Build | Expo EAS |
 
 ## License
-Proprietary — © วังสามหมอ Tour Der Wang
+
+Private — Wang Sam Mo Food Delivery
