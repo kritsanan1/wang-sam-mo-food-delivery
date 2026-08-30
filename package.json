@@ -1,0 +1,15 @@
+{
+  "name": "wang-sam-mo-food-delivery",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Food delivery app for Wang Sam Mo, Udon Thani",
+  "scripts": {
+    "setup": "npm install --prefix functions && npm install --prefix admin",
+    "lint": "echo 'TODO: add eslint'",
+    "deploy:functions": "cd functions && npm run deploy",
+    "deploy:admin": "cd admin && npm run build && firebase deploy --only hosting"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
