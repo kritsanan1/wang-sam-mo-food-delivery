@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { View, Text, StyleSheet, FlatList, TouchableOpacity, TextInput, Alert, Switch, Modal } from "react-native";
 import { useRouter } from "expo-router";
-import { auth, db, storage } from "@/services/firebase";
+import { auth, db } from "@/services/firebase";
 import { collection, onSnapshot, addDoc, updateDoc, deleteDoc, doc, getDoc } from "firebase/firestore";
-import type { MenuItem } from "./src/types";
+import type { MenuItem } from "@/types";
 
 export default function MenuManagementScreen() {
   const router = useRouter();

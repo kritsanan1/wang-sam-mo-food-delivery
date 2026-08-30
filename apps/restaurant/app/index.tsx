@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, TouchableOpacity, FlatList, Alert, Switch } fro
 import { useRouter } from "expo-router";
 import { auth, db } from "@/services/firebase";
 import { collection, query, where, onSnapshot, doc, updateDoc, getDoc } from "firebase/firestore";
-import { ORDER_STATUS_LABELS, type Order, type OrderStatus } from "./src/types";
+import { ORDER_STATUS_LABELS, type Order, type OrderStatus } from "@/types";
 
 export default function RestaurantDashboardScreen() {
   const router = useRouter();
