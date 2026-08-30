@@ -1,0 +1,99 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ============ USERS ============
+    match /users/{userId} {
+      allow read: if request.auth != null && (
+        request.auth.uid == userId ||
+        isAdmin()
+      );
+      allow create: if request.auth != null && request.auth.uid == userId;
+      allow update: if request.auth != null && (
+        request.auth.uid == userId ||
+        isAdmin()
+      );
+      allow delete: if isAdmin();
+    }
+
+    // ============ RESTAURANTS ============
+    match /restaurants/{restaurantId} {
+      allow read: if true; // public: ลูกค้าดูร้านได้
+      allow create: if request.auth != null; // ร้านสมัครเอง (รอ admin approve)
+      allow update: if request.auth != null && (
+        isRestaurantOwner(restaurantId) ||
+        isAdmin()
+      );
+      allow delete: if isAdmin();
+
+      // ============ MENU ITEMS ============
+      match /menu/{itemId} {
+        allow read: if true; // public
+        allow create, update, delete: if request.auth != null && (
+          isRestaurantOwner(restaurantId) ||
+          isAdmin()
+        );
+      }
+    }
+
+    // ============ ORDERS ============
+    match /orders/{orderId} {
+      // ลูกค้าที่สั่ง, ร้านที่เกี่ยวข้อง, rider ที่รับงาน, admin อ่านได้
+      allow read: if request.auth != null && (
+        resource.data.customerId == request.auth.uid ||
+        isRestaurantOwner(resource.data.restaurantId) ||
+        (resource.data.riderId == request.auth.uid) ||
+        isAdmin()
+      );
+      // ลูกค้าสร้างคำสั่งได้
+      allow create: if request.auth != null && (
+        request.data.customerId == request.auth.uid
+      );
+      // ร้านอัปเดตสถานะได้, rider อัปเดตสถานะได้, admin ได้
+      allow update: if request.auth != null && (
+        isRestaurantOwner(resource.data.restaurantId) ||
+        (resource.data.riderId == request.auth.uid) ||
+        isAdmin() ||
+        (resource.data.customerId == request.auth.uid &&
+         request.data.status == 'cancelled')
+      );
+      allow delete: if isAdmin();
+    }
+
+    // ============ RIDERS ============
+    match /riders/{riderId} {
+      allow read: if request.auth != null; // ร้าน/ลูกค้าดู rider ที่ส่งได้
+      allow create: if request.auth != null && request.auth.uid == riderId;
+      allow update: if request.auth != null && (
+        request.auth.uid == riderId ||
+        isAdmin()
+      );
+      allow delete: if isAdmin();
+    }
+
+    // ============ PROMOTIONS ============
+    match /promotions/{promoId} {
+      allow read: if true; // public: ลูกค้าเห็นโปรได้
+      allow create, update, delete: if isAdmin();
+    }
+
+    // ============ CATEGORIES ============
+    match /categories/{categoryId} {
+      allow read: if true;
+      allow create, update, delete: if isAdmin();
+    }
+
+    // ============ HELPER FUNCTIONS ============
+    function isAdmin() {
+      return request.auth != null &&
+        exists(/databases/$(database)/documents/users/$(request.auth.uid)) &&
+        get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin';
+    }
+
+    function isRestaurantOwner(restaurantId) {
+      return request.auth != null &&
+        exists(/databases/$(database)/documents/restaurants/$(restaurantId)) &&
+        get(/databases/$(database)/documents/restaurants/$(restaurantId)).data.ownerUserId == request.auth.uid;
+    }
+  }
+}
