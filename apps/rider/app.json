@@ -1,0 +1,36 @@
+{
+  "expo": {
+    "name": "วังสามหมอ Rider",
+    "slug": "wang-sam-mo-rider",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "wangsammo-rider",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "ios": {
+      "bundleIdentifier": "com.wangsammo.rider",
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "ต้องการที่ตั้งเพื่อส่งงานใกล้คุณ",
+        "NSLocationAlwaysUsageDescription": "ต้องการที่ตั้งตลอดเวลาเพื่อติดตามการส่ง"
+      },
+      "config": { "googleMapsApiKey": "YOUR_IOS_MAPS_KEY" }
+    },
+    "android": {
+      "package": "com.wangsammo.rider",
+      "permissions": ["ACCESS_FINE_LOCATION", "ACCESS_COARSE_LOCATION", "ACCESS_BACKGROUND_LOCATION"],
+      "config": { "googleMaps": { "apiKey": "YOUR_ANDROID_MAPS_KEY" } }
+    },
+    "plugins": ["expo-router", "expo-notifications", "expo-location"],
+    "extra": {
+      "firebaseConfig": {
+        "apiKey": "YOUR_API_KEY",
+        "authDomain": "YOUR_PROJECT.firebaseapp.com",
+        "projectId": "YOUR_PROJECT_ID",
+        "storageBucket": "YOUR_PROJECT.appspot.com",
+        "messagingSenderId": "YOUR_SENDER_ID",
+        "appId": "YOUR_APP_ID"
+      }
+    }
+  }
+}
