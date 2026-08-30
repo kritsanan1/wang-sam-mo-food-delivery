@@ -6,7 +6,7 @@
     "orientation": "portrait",
     "scheme": "wangsammorestaurant",
     "userInterfaceStyle": "light",
-    "newArchEnabled": true,
+    "newArchEnabled": false,
     "ios": {
       "bundleIdentifier": "com.wangsammo.restaurant",
       "supportsTablet": true
@@ -14,8 +14,13 @@
     "android": {
       "package": "com.wangsammo.restaurant"
     },
-    "web": { "bundler": "metro" },
-    "plugins": ["expo-router", "expo-notifications"],
+    "web": {
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-notifications"
+    ],
     "extra": {
       "firebaseConfig": {
         "apiKey": "AIzaSyD4sWSZqHmHBK-47saTScpdtZ8XGHRGJ1Y",
@@ -24,8 +29,17 @@
         "storageBucket": "wang-sam-mo-food-delivery.firebasestorage.app",
         "messagingSenderId": "602447821203",
         "appId": "1:602447821203:web:e1241cefeaf895291c5066"
+      },
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "44f692be-14df-44a4-8f21-6e8be01109cc"
       }
     },
-    "runtimeVersion": { "policy": "appVersion" }
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "owner": "xxxiva"
   }
 }

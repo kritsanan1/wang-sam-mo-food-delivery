@@ -1,25 +1,6 @@
-import { useEffect, useState } from "react";
-import * as Location from "expo-location";
-import { Platform } from "react-native";
-
+// Placeholder — GPS will be added when expo-location is configured with native build
 export function useUserLocation() {
-  const [location, setLocation] = useState<{ lat: number; lng: number } | null>(null);
-  const [errorMsg, setErrorMsg] = useState<string | null>(null);
-
-  useEffect(() => {
-    (async () => {
-      if (Platform.OS === "web") return;
-      const { status } = await Location.requestForegroundPermissionsAsync();
-      if (status !== "granted") {
-        setErrorMsg("กรุณาอนุญาตให้แอพเข้าถึงตำแหน่ง");
-        return;
-      }
-      const loc = await Location.getCurrentPositionAsync({});
-      setLocation({ lat: loc.coords.latitude, lng: loc.coords.longitude });
-    })();
-  }, []);
-
-  return { location, errorMsg };
+  return { location: null, errorMsg: null };
 }
 
 export function haversineDistance(lat1: number, lng1: number, lat2: number, lng2: number): number {

@@ -1,31 +1,32 @@
 {
   "expo": {
     "name": "วังสามหมอ Food",
-    "slug": "wang-sam-mo-customer",
+    "slug": "tourderwangeat",
     "version": "1.0.0",
     "orientation": "portrait",
     "scheme": "wangsammo",
     "userInterfaceStyle": "light",
-    "newArchEnabled": true,
+    "newArchEnabled": false,
     "ios": {
       "bundleIdentifier": "com.wangsammo.customer",
       "supportsTablet": true,
       "infoPlist": {
         "NSLocationWhenInUseUsageDescription": "ต้องการที่ตั้งเพื่อหาร้านใกล้คุณ"
-      },
-      "config": {
-        "googleMapsApiKey": "YOUR_IOS_MAPS_KEY"
       }
     },
     "android": {
       "package": "com.wangsammo.customer",
-      "permissions": ["ACCESS_FINE_LOCATION", "ACCESS_COARSE_LOCATION"],
-      "config": {
-        "googleMaps": { "apiKey": "YOUR_ANDROID_MAPS_KEY" }
-      }
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION"
+      ]
     },
-    "web": { "bundler": "metro" },
-    "plugins": ["expo-router", "expo-notifications"],
+    "web": {
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-router"
+    ],
     "extra": {
       "firebaseConfig": {
         "apiKey": "AIzaSyD4sWSZqHmHBK-47saTScpdtZ8XGHRGJ1Y",
@@ -35,9 +36,18 @@
         "messagingSenderId": "602447821203",
         "appId": "1:602447821203:web:e1241cefeaf895291c5066"
       },
-      "eas": { "projectId": "YOUR_EAS_PROJECT_ID" }
+      "eas": {
+        "projectId": "8fd3bfa7-ec8b-42a2-a635-704ce67e4acf"
+      },
+      "router": {
+        "origin": false
+      }
     },
-    "updates": { "url": "https://u.expo.dev/your-update-url" },
-    "runtimeVersion": { "policy": "appVersion" }
+    "updates": {
+      "url": "https://u.expo.dev/8fd3bfa7-ec8b-42a2-a635-704ce67e4acf"
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
   }
 }
