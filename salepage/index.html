@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>วังสามหมอ Food Delivery — โอกาสทองแห่งใหม่ของคนอุดรธานี</title>
+<meta name="description" content="แพลตฟอร์มสั่งอาหารออนไลน์ของชุมชนวังสามหมอ ร้านอาหารลงทะเบียนฟรี ลูกค้าสั่งง่าย ไรเดอร์มีรายได้ นักลงทุนร่วมเติบโต">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --orange:#FF6B35; --mint:#2EC4B6; --dark:#1A1A2E; --gray:#6C757D;
+    --red:#E71D36; --bg:#F8F9FA; --white:#fff;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Sarabun',sans-serif;color:var(--dark);background:var(--bg);line-height:1.7}
+  .container{max-width:1100px;margin:0 auto;padding:0 20px}
+  section{padding:72px 0}
+
+  /* ===== Hero ===== */
+  .hero{background:linear-gradient(135deg,var(--orange) 0%,#ff8c5a 55%,var(--mint) 130%);color:#fff;padding:110px 0 90px;position:relative;overflow:hidden}
+  .hero::after{content:'';position:absolute;bottom:-1px;left:0;right:0;height:70px;background:var(--bg);clip-path:polygon(0 100%,100% 100%,100% 0)}
+  .badge{display:inline-block;background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.5);padding:6px 18px;border-radius:999px;font-size:15px;font-weight:600;margin-bottom:22px}
+  .hero h1{font-size:clamp(30px,5.5vw,54px);font-weight:800;line-height:1.25;margin-bottom:18px}
+  .hero h1 span{color:#ffe8c2}
+  .hero p.sub{font-size:clamp(16px,2.2vw,21px);opacity:.95;max-width:680px;margin-bottom:34px}
+  .cta-row{display:flex;gap:14px;flex-wrap:wrap}
+  .btn{display:inline-block;padding:15px 34px;border-radius:999px;font-weight:700;font-size:17px;text-decoration:none;transition:.25s;cursor:pointer;border:none}
+  .btn-white{background:#fff;color:var(--orange)}
+  .btn-white:hover{transform:translateY(-3px);box-shadow:0 12px 24px rgba(0,0,0,.2)}
+  .btn-outline{border:2px solid #fff;color:#fff;background:transparent}
+  .btn-outline:hover{background:#fff;color:var(--orange);transform:translateY(-3px)}
+  .btn-orange{background:var(--orange);color:#fff}
+  .btn-orange:hover{transform:translateY(-3px);box-shadow:0 12px 24px rgba(255,107,53,.4)}
+  .btn-mint{background:var(--mint);color:#fff}
+  .btn-mint:hover{transform:translateY(-3px);box-shadow:0 12px 24px rgba(46,196,182,.4)}
+
+  /* ===== Section headings ===== */
+  .kicker{color:var(--orange);font-weight:700;letter-spacing:2px;font-size:14px;text-transform:uppercase;text-align:center}
+  h2.title{font-size:clamp(26px,4vw,40px);font-weight:800;text-align:center;margin:8px 0 14px}
+  .lead{text-align:center;color:var(--gray);max-width:640px;margin:0 auto 48px;font-size:17px}
+
+  /* ===== Stats ===== */
+  .stats{background:var(--dark);color:#fff;padding:56px 0}
+  .stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:28px;text-align:center}
+  .stat .num{font-size:44px;font-weight:800;color:var(--orange)}
+  .stat .lbl{font-size:15px;opacity:.85}
+
+  /* ===== 4 apps ===== */
+  .apps-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px}
+  .app-card{background:#fff;border-radius:20px;padding:32px 24px;text-align:center;box-shadow:0 6px 24px rgba(26,26,46,.07);transition:.25s;border-top:5px solid var(--orange)}
+  .app-card:hover{transform:translateY(-6px);box-shadow:0 16px 36px rgba(26,26,46,.13)}
+  .app-card .icon{font-size:48px;margin-bottom:14px}
+  .app-card h3{font-size:20px;font-weight:700;margin-bottom:8px}
+  .app-card p{color:var(--gray);font-size:15px}
+
+  /* ===== Audience cards ===== */
+  .aud-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:26px}
+  .aud-card{border-radius:24px;padding:38px 30px;color:#fff;position:relative;overflow:hidden}
+  .aud-card h3{font-size:24px;font-weight:800;margin-bottom:6px}
+  .aud-card .tagline{font-size:16px;opacity:.92;margin-bottom:20px}
+  .aud-card ul{list-style:none;margin-bottom:26px}
+  .aud-card li{padding:7px 0 7px 30px;position:relative;font-size:15.5px}
+  .aud-card li::before{content:'✓';position:absolute;left:0;font-weight:800}
+  .aud-card .btn{width:100%;text-align:center}
+  .c-invest{background:linear-gradient(150deg,#1A1A2E,#3a3a5e)}
+  .c-shop{background:linear-gradient(150deg,var(--orange),#ff8c5a)}
+  .c-customer{background:linear-gradient(150deg,var(--mint),#57d8cc)}
+  .c-rider{background:linear-gradient(150deg,#E71D36,#ff5a6e)}
+
+  /* ===== Why us ===== */
+  .why{background:#fff}
+  .why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}
+  .why-item{background:var(--bg);border-radius:16px;padding:26px 24px}
+  .why-item h4{font-size:18px;font-weight:700;margin-bottom:6px}
+  .why-item p{color:var(--gray);font-size:15px}
+
+  /* ===== Countdown ===== */
+  .countdown-wrap{background:linear-gradient(135deg,var(--dark),#2a2a45);color:#fff;text-align:center}
+  .cd{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin:28px 0 8px}
+  .cd-box{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:16px;padding:18px 10px;min-width:96px}
+  .cd-box .v{font-size:40px;font-weight:800;color:var(--orange)}
+  .cd-box .l{font-size:13px;opacity:.8}
+
+  /* ===== Register form ===== */
+  .form-wrap{background:#fff;border-radius:24px;box-shadow:0 14px 44px rgba(26,26,46,.12);padding:44px;max-width:640px;margin:0 auto}
+  .form-wrap h3{font-size:24px;font-weight:800;text-align:center;margin-bottom:8px}
+  .form-wrap p.sub{text-align:center;color:var(--gray);margin-bottom:26px;font-size:15px}
+  .form-row{margin-bottom:16px}
+  .form-row label{display:block;font-weight:600;font-size:15px;margin-bottom:6px}
+  .form-row input,.form-row select,.form-row textarea{width:100%;padding:13px 16px;border:2px solid #e4e6eb;border-radius:12px;font-family:inherit;font-size:16px;transition:.2s}
+  .form-row input:focus,.form-row select:focus,.form-row textarea:focus{outline:none;border-color:var(--orange)}
+  .form-note{text-align:center;font-size:13px;color:var(--gray);margin-top:14px}
+  .form-success{display:none;text-align:center;padding:40px 0}
+  .form-success .big{font-size:56px;margin-bottom:10px}
+
+  /* ===== FAQ ===== */
+  .faq-item{background:#fff;border-radius:14px;margin-bottom:12px;overflow:hidden;box-shadow:0 3px 12px rgba(26,26,46,.06)}
+  .faq-q{padding:18px 24px;font-weight:700;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-size:16.5px}
+  .faq-q::after{content:'+';font-size:24px;color:var(--orange);transition:.2s}
+  .faq-item.open .faq-q::after{content:'−'}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 24px;color:var(--gray)}
+  .faq-item.open .faq-a{max-height:300px;padding-bottom:20px}
+
+  /* ===== Footer ===== */
+  footer{background:var(--dark);color:#fff;padding:52px 0 30px;text-align:center}
+  footer .brand{font-size:24px;font-weight:800;color:var(--orange);margin-bottom:8px}
+  footer p{opacity:.75;font-size:14px}
+
+  /* Sticky CTA bar (mobile) */
+  .sticky-cta{position:fixed;bottom:0;left:0;right:0;background:#fff;box-shadow:0 -4px 18px rgba(0,0,0,.12);padding:12px 16px;display:none;gap:10px;z-index:99}
+  .sticky-cta .btn{flex:1;padding:12px;font-size:15px;text-align:center}
+  @media(max-width:720px){
+    section{padding:54px 0}
+    .sticky-cta{display:flex}
+    body{padding-bottom:70px}
+    .form-wrap{padding:30px 22px}
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= HERO ================= -->
+<header class="hero">
+  <div class="container" style="text-align:center">
+    <div class="badge">🚀 เปิดตัวเร็ว ๆ นี้ — เฉพาะวังสามหมอ อุดรธานี</div>
+    <h1>อาหารท้องถิ่นทั้งอำเภอ<br>อยู่ใน<span>กระเป๋าคุณ</span>แล้ว</h1>
+    <p class="sub">แพลตฟอร์มสั่งอาหารของคนวังสามหมอ โดยคนวังสามหมอ — ร้านขายง่าย ลูกค้าอิ่มไว ไรเดอร์มีงาน นักลงทุนเติบโตไปด้วยกัน</p>
+    <div class="cta-row" style="justify-content:center">
+      <a class="btn btn-white" href="#register">ลงทะเบียนล่วงหน้าเลย</a>
+      <a class="btn btn-outline" href="#audience">ฉันอยากรู้ก่อน</a>
+    </div>
+  </div>
+</header>
+
+<!-- ================= STATS ================= -->
+<div class="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat"><div class="num" data-count="4">0</div><div class="lbl">แอพครบทุกบทบาท</div></div>
+      <div class="stat"><div class="num" data-count="100" data-suffix="+">0</div><div class="lbl">ร้านอาหารรอเปิดระบบ</div></div>
+      <div class="stat"><div class="num" data-count="30" data-suffix=" นาที">0</div><div class="lbl">ส่งไวถึงหน้าบ้าน</div></div>
+      <div class="stat"><div class="num" data-count="0" data-prefix="฿" data-static="1">฿0</div><div class="lbl">ค่าลงทะเบียนร้านค้า</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= APPS ================= -->
+<section>
+  <div class="container">
+    <div class="kicker">ระบบนิเวศครบวงจร</div>
+    <h2 class="title">4 แอพ ทำงานร่วมกันเป็นหนึ่งเดียว</h2>
+    <p class="lead">ไม่ใช่แค่แอพสั่งอาหาร แต่คือโครงสร้างพื้นฐานเศรษฐกิจชุมชนแบบครบวงจร</p>
+    <div class="apps-grid">
+      <div class="app-card"><div class="icon">🛒</div><h3>Customer</h3><p>ลูกค้าสั่งอาหารจากร้านในพื้นที่ เลื่อนดูเมนู สั่ง จ่าย รอรับที่บ้าน</p></div>
+      <div class="app-card"><div class="icon">🛵</div><h3>Rider</h3><p>ไรเดอร์รับงานส่งอาหาร ดูรายได้แบบเรียลไทม์ ทำงานยืดหยุ่น</p></div>
+      <div class="app-card"><div class="icon">🏪</div><h3>Restaurant</h3><p>ร้านอาหารจัดการเมนู รับออเดอร์ ดูรายงานยอดขายครบในมือถือเครื่องเดียว</p></div>
+      <div class="app-card"><div class="icon">📊</div><h3>Admin</h3><p>ทีมงานดูแลระบบ โปรโมชั่น และรายงานภาพรวมทั้งอำเภอแบบเรียลไทม์</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 4 AUDIENCES ================= -->
+<section id="audience" style="background:#fff">
+  <div class="container">
+    <div class="kicker">ใครได้อะไรบ้าง</div>
+    <h2 class="title">เลือกบทบาทของคุณ แล้วเริ่มก่อนใคร</h2>
+    <p class="lead">ทุกคนมีตำแหน่งในระบบนิเวศนี้ — ลงทะเบียนล่วงหน้าวันนี้ รับสิทธิ์กลุ่มแรกก่อนเปิดตัว</p>
+    <div class="aud-grid">
+
+      <div class="aud-card c-invest">
+        <h3>💼 นักลงทุน</h3>
+        <div class="tagline">ตลาดอาหารท้องถิ่นที่ยังไม่มีใครครอง</div>
+        <ul>
+          <li>ตลาดชุมชนเฉพาะพื้นที่ คู่แข่งน้อย เติบโตเร็ว</li>
+          <li>โมเดลรายได้ชัดเจน: GP + โฆษณาร้านค้า</li>
+          <li>ขยายสู่อำเภออื่นด้วยระบบเดิม</li>
+          <li>รายงานตัวเลขโปร่งใส ตรวจสอบได้ทุกบาท</li>
+        </ul>
+        <a class="btn btn-white" href="#register" onclick="setRole('investor')">นัดคุยเรื่องการลงทุน</a>
+      </div>
+
+      <div class="aud-card c-shop">
+        <h3>🏪 พ่อค้าแม่ค้าร้านอาหาร</h3>
+        <div class="tagline">ร้านของคุณ เปิดขาย 24 ชม. โดยไม่ต้องจ้างใครเพิ่ม</div>
+        <ul>
+          <li>ลงทะเบียนฟรี ไม่มีค่าแรกเข้า</li>
+          <li>มีทีมช่วยถ่ายรูปเมนู + ตั้งค่าร้านให้ครบ</li>
+          <li>รับออเดอร์เพิ่มโดยไม่ต้องเพิ่มพนักงาน</li>
+          <li>เบิกเงินไว ดูยอดขายย้อนหลังได้ทุกวัน</li>
+        </ul>
+        <a class="btn btn-white" href="#register" onclick="setRole('restaurant')">ลงทะเบียนร้านฟรี</a>
+      </div>
+
+      <div class="aud-card c-customer">
+        <h3>🍜 ลูกค้า</h3>
+        <div class="tagline">อยากกินอะไร กดเดียว ร้อน ๆ ถึงหน้าบ้าน</div>
+        <ul>
+          <li>ร้านดังในพื้นที่รวมอยู่ในแอพเดียว</li>
+          <li>ส่งไว 30 นาที โดยไรเดอร์คนในพื้นที่</li>
+          <li>โปรเปิดตัว: ส่งฟรีรอบแรกทั้งอำเภอ</li>
+          <li>ลงทะเบียนล่วงหน้า รับคูปองส่วนลดพิเศษ</li>
+        </ul>
+        <a class="btn btn-white" href="#register" onclick="setRole('customer')">รับคูปองกลุ่มแรก</a>
+      </div>
+
+      <div class="aud-card c-rider">
+        <h3>🛵 คนว่างงาน / อยากมีรายได้เสริม</h3>
+        <div class="tagline">มีมอเตอร์ไซค์ มีมือถือ = มีงานทำทันที</div>
+        <ul>
+          <li>สมัครง่าย อนุมัติไว ไม่ต้องมีประสบการณ์</li>
+          <li>เลือกเวลาทำงานเอง อยากวิ่งเมื่อไหร่ก็ได้</li>
+          <li>เห็นรายได้ทันทีทุกเที่ยว เบิกเงินได้รายสัปดาห์</li>
+          <li>รับงานใกล้บ้าน ไม่ต้องเข้าเมือง</li>
+        </ul>
+        <a class="btn btn-white" href="#register" onclick="setRole('rider')">สมัครเป็นไรเดอร์</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHY US ================= -->
+<section class="why">
+  <div class="container">
+    <div class="kicker">ทำไมต้องวังสามหมอ Food Delivery</div>
+    <h2 class="title">สร้างเพื่อชุมชน ไม่ใช่แค่ธุรกิจ</h2>
+    <p class="lead">แพลตฟอร์มใหญ่ไม่เคยมองอำเภอเล็ก ๆ — แต่เราคือคนที่นี่ เราเข้าใจทุกซอกมุม</p>
+    <div class="why-grid">
+      <div class="why-item"><h4>📍 รู้ทุกซอยในพื้นที่</h4><p>ไรเดอร์คือคนท้องถิ่น รู้ทางลัด รู้จุดส่ง ไม่มีหลง ไม่มีส่งช้า</p></div>
+      <div class="why-item"><h4>💸 เงินหมุนเวียนในชุมชน</h4><p>ทุกบาทจากการสั่งอาหาร กลับไปสู่ร้านค้าและไรเดอร์ในอำเภอ ไม่รั่วไหลออกนอกพื้นที่</p></div>
+      <div class="why-item"><h4>🤝 ทีมงานดูแลใกล้ชิด</h4><p>มีปัญหาโทรหาได้เลย ไม่ใช่แชทบอท — ทีมงานอยู่ในพื้นที่จริง</p></div>
+      <div class="why-item"><h4>⚙️ เทคโนโลยีระดับสากล</h4><p>สร้างบน Expo + Firebase + Next.js ระบบเดียวกับแพลตฟอร์มใหญ่ แต่ค่าธรรมเนียมยุติธรรมกว่า</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= COUNTDOWN ================= -->
+<section class="countdown-wrap">
+  <div class="container">
+    <div class="kicker" style="color:var(--mint)">นับถอยหลัง</div>
+    <h2 class="title" style="color:#fff">เปิดระบบเต็มรูปแบบในอีก</h2>
+    <div class="cd">
+      <div class="cd-box"><div class="v" id="cd-d">--</div><div class="l">วัน</div></div>
+      <div class="cd-box"><div class="v" id="cd-h">--</div><div class="l">ชั่วโมง</div></div>
+      <div class="cd-box"><div class="v" id="cd-m">--</div><div class="l">นาที</div></div>
+      <div class="cd-box"><div class="v" id="cd-s">--</div><div class="l">วินาที</div></div>
+    </div>
+    <p style="opacity:.85;max-width:520px;margin:10px auto 0">ผู้ลงทะเบียนล่วงหน้า 500 คนแรก รับสิทธิ์พิเศษกลุ่ม Founding Members ก่อนเปิดตัวจริง</p>
+  </div>
+</section>
+
+<!-- ================= REGISTER ================= -->
+<section id="register" style="background:linear-gradient(180deg,var(--bg),#fff3ec)">
+  <div class="container">
+    <div class="kicker">เริ่มเลย ฟรี ไม่มีผูกมัด</div>
+    <h2 class="title">ลงทะเบียนล่วงหน้าวันนี้</h2>
+    <p class="lead">กรอกข้อมูล 1 นาที — ทีมงานติดต่อกลับภายใน 24 ชั่วโมง</p>
+    <div class="form-wrap">
+      <form id="regForm">
+        <h3>📝 ฟอร์มลงทะเบียน</h3>
+        <p class="sub">เลือกบทบาทที่สนใจ แล้วทิ้งช่องทางติดต่อไว้</p>
+        <div class="form-row">
+          <label>ชื่อ-นามสกุล / ชื่อร้าน *</label>
+          <input type="text" id="f-name" required placeholder="เช่น สมชาย ใจดี / ร้านก๋วยเตี๋ยวเรือเจ๊แดง">
+        </div>
+        <div class="form-row">
+          <label>เบอร์โทรศัพท์ *</label>
+          <input type="tel" id="f-phone" required placeholder="08x-xxx-xxxx" pattern="[0-9\- ]{9,12}">
+        </div>
+        <div class="form-row">
+          <label>ฉันคือ... *</label>
+          <select id="f-role" required>
+            <option value="">— เลือกบทบาท —</option>
+            <option value="restaurant">🏪 เจ้าของร้านอาหาร — อยากลงทะเบียนร้าน</option>
+            <option value="customer">🍜 ลูกค้า — อยากสั่งอาหาร</option>
+            <option value="rider">🛵 อยากสมัครเป็นไรเดอร์</option>
+            <option value="investor">💼 นักลงทุน — สนใจร่วมลงทุน</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label>หมายเหตุเพิ่มเติม (ถ้ามี)</label>
+          <textarea id="f-note" rows="3" placeholder="เช่น ประเภทอาหารที่ขาย / พื้นที่ที่อยู่ / งบลงทุนที่สนใจ"></textarea>
+        </div>
+        <button type="submit" class="btn btn-orange" style="width:100%;font-size:18px">ส่งข้อมูลลงทะเบียน 🚀</button>
+        <p class="form-note">ข้อมูลของคุณปลอดภัย ใช้เพื่อติดต่อกลับเท่านั้น ไม่ขายต่อให้ใครแน่นอน</p>
+      </form>
+      <div class="form-success" id="formSuccess">
+        <div class="big">🎉</div>
+        <h3 style="margin-bottom:6px">ลงทะเบียนสำเร็จ!</h3>
+        <p style="color:var(--gray)">ทีมงานวังสามหมอจะติดต่อกลับภายใน 24 ชั่วโมง<br>ขอบคุณที่เป็นส่วนหนึ่งของการเปลี่ยนแปลงชุมชน 🧡</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section>
+  <div class="container" style="max-width:760px">
+    <div class="kicker">คำถามที่พบบ่อย</div>
+    <h2 class="title">อยากรู้อะไร ถามมาเลย</h2>
+    <p class="lead"></p>
+
+    <div class="faq-item"><div class="faq-q">ร้านอาหารลงทะเบียนมีค่าใช้จ่ายไหม?</div><div class="faq-a">ลงทะเบียนฟรี 100% ไม่มีค่าแรกเข้า คิดค่าบริการเป็นเปอร์เซ็นต์จากยอดขายจริงเท่านั้น — ขายได้ก่อน ค่อยจ่าย รายละเอียด GP ทีมงานแจ้งตอนติดต่อกลับ</div></div>
+    <div class="faq-item"><div class="faq-q">ไรเดอร์ต้องมีคุณสมบัติอะไรบ้าง?</div><div class="faq-a">มีมอเตอร์ไซค์ ใบขับขี่ และสมาร์ทโฟน เท่านั้น อายุ 18 ปีขึ้นไป ไม่ต้องมีประสบการณ์ ทีมงานสอนการใช้แอพให้ฟรี</div></div>
+    <div class="faq-item"><div class="faq-q">ลูกค้าต้องจ่ายค่าส่งเท่าไหร่?</div><div class="faq-a">ช่วงเปิดตัวส่งฟรีรอบแรกทั้งอำเภอ หลังจากนั้นค่าส่งคิดตามระยะทางจริง เริ่มต้นเพียงไม่กี่บาท เพราะไรเดอร์อยู่ในพื้นที่</div></div>
+    <div class="faq-item"><div class="faq-q">นักลงทุนจะได้ผลตอบแทนอย่างไร?</div><div class="faq-a">โมเดลรายได้มาจากค่าบริการร้านค้า (GP) และโฆษณาในแอพ มีแผนขยายสู่อำเภอใกล้เคียงด้วยระบบเดิม นัดคุยรายละเอียดและดูตัวเลขโปรเจกชั่นได้โดยตรงผ่านฟอร์มลงทะเบียน</div></div>
+    <div class="faq-item"><div class="faq-q">พื้นที่ให้บริการตอนนี้ครอบคลุมแค่ไหน?</div><div class="faq-a">เริ่มที่อำเภอวังสามหมอ จังหวัดอุดรธานี เป็นพื้นที่แรก แล้วขยายครอบคลุมตำบลใกล้เคียงตามจำนวนร้านค้าและไรเดอร์ที่ลงทะเบียน</div></div>
+  </div>
+</section>
+
+<!-- ================= FINAL CTA ================= -->
+<section style="background:linear-gradient(135deg,var(--orange),var(--mint));color:#fff;text-align:center;padding:80px 0">
+  <div class="container">
+    <h2 class="title" style="color:#fff">อย่ารอให้คนอื่นเริ่มก่อน</h2>
+    <p style="max-width:560px;margin:0 auto 30px;font-size:18px;opacity:.95">ชุมชนของเรากำลังจะเปลี่ยน — ร้านค้า ไรเดอร์ ลูกค้า และนักลงทุนที่ลงทะเบียนวันนี้ คือกลุ่มแรกที่ได้ประโยชน์สูงสุด</p>
+    <a class="btn btn-white" href="#register" style="font-size:19px;padding:17px 44px">🔥 ลงทะเบียนล่วงหน้าเลย</a>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="container">
+    <div class="brand">🍜 วังสามหมอ Food Delivery</div>
+    <p>แพลตฟอร์มสั่งอาหารออนไลน์ของชุมชนวังสามหมอ จังหวัดอุดรธานี</p>
+    <p style="margin-top:14px">📱 Customer · Rider · Restaurant · Admin — 4 แอพ 1 ระบบนิเวศ</p>
+    <p style="margin-top:20px;opacity:.5">© 2026 วังสามหมอ Food Delivery — สร้างด้วย ❤️ โดยคนในพื้นที่</p>
+  </div>
+</footer>
+
+<!-- Sticky mobile CTA -->
+<div class="sticky-cta">
+  <a class="btn btn-orange" href="#register" onclick="setRole('restaurant')">ลงทะเบียนร้าน</a>
+  <a class="btn btn-mint" href="#register" onclick="setRole('rider')">สมัครไรเดอร์</a>
+</div>
+
+<script>
+  // ===== Countdown (30 days from now, adjustable) =====
+  const LAUNCH = new Date(); LAUNCH.setDate(LAUNCH.getDate() + 30);
+  function tick(){
+    const diff = LAUNCH - new Date();
+    const d = Math.max(0, Math.floor(diff / 86400000));
+    const h = Math.max(0, Math.floor(diff / 3600000) % 24);
+    const m = Math.max(0, Math.floor(diff / 60000) % 60);
+    const s = Math.max(0, Math.floor(diff / 1000) % 60);
+    document.getElementById('cd-d').textContent = d;
+    document.getElementById('cd-h').textContent = String(h).padStart(2,'0');
+    document.getElementById('cd-m').textContent = String(m).padStart(2,'0');
+    document.getElementById('cd-s').textContent = String(s).padStart(2,'0');
+  }
+  tick(); setInterval(tick, 1000);
+
+  // ===== Animated counters =====
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const el = e.target, target = +el.dataset.count;
+      if (el.dataset.static) { obs.unobserve(el); return; }
+      let cur = 0; const step = Math.max(1, Math.ceil(target / 40));
+      const iv = setInterval(() => {
+        cur = Math.min(target, cur + step);
+        el.textContent = (el.dataset.prefix || '') + cur + (el.dataset.suffix || '');
+        if (cur >= target) clearInterval(iv);
+      }, 35);
+      obs.unobserve(el);
+    });
+  }, { threshold: .5 });
+  document.querySelectorAll('.stat .num').forEach(el => obs.observe(el));
+
+  // ===== FAQ accordion =====
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => q.parentElement.classList.toggle('open'));
+  });
+
+  // ===== Role preselect from audience CTA =====
+  function setRole(role){
+    const sel = document.getElementById('f-role');
+    if (sel) sel.value = role;
+  }
+
+  // ===== Form submit (demo: stores locally + shows success) =====
+  document.getElementById('regForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    const data = {
+      name: document.getElementById('f-name').value.trim(),
+      phone: document.getElementById('f-phone').value.trim(),
+      role: document.getElementById('f-role').value,
+      note: document.getElementById('f-note').value.trim(),
+      at: new Date().toISOString()
+    };
+    // TODO: connect to Firebase Firestore collection 'pre_registrations'
+    const list = JSON.parse(localStorage.getItem('wsm_pre_reg') || '[]');
+    list.push(data);
+    localStorage.setItem('wsm_pre_reg', JSON.stringify(list));
+    this.style.display = 'none';
+    document.getElementById('formSuccess').style.display = 'block';
+  });
+</script>
+</body>
+</html>
